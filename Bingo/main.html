@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Подієве Бінго</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(5, 60px);
+      grid-template-rows: repeat(5, 60px);
+      gap: 5px;
+      margin-bottom: 1rem;
+    }
+
+    .cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #000;
+      font-weight: bold;
+      background-color: #f0f0f0;
+      cursor: pointer;
+    }
+
+    .cell.marked {
+      background-color: lightgreen;
+    }
+
+    .cell.free {
+      background-color: #ddd;
+    }
+
+    .event-list {
+      margin-bottom: 1rem;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Подієве Бінго</h1>
+  <div class="grid" id="bingoGrid"></div>
+
+  <div class="event-list" id="eventList"></div>
+
+  <div class="buttons">
+    <button onclick="shuffleBoard()">Перемішати</button>
+    <button onclick="checkBingo()">Бінго!</button>
+  </div>
+
+  <script>
+    const gridSize = 5;
+    let cells = [];
+    const events = [
+      "Впав стакан",
+      "Хтось чхнув",
+      "Зателефонував телефон",
+      "Хтось запізнився",
+      "Відкрили вікно",
+      "Хтось сказав жарт",
+      "Пролилась вода",
+      "Почулося " + 'мяу',
+      "Вийшла реклама",
+      "Хтось вийшов",
+      "Хтось голосно засміявся",
+      "Переплутали слова",
+      "Почався дощ",
+      "Закінчилась кава",
+      "Хтось стукає в двері",
+      "Зник інтернет",
+      "Хтось співає",
+      "Впала ручка",
+      "Загорівся світлофор",
+      "Глюкнув мікрофон",
+      "Хтось гикнув",
+      "Пес загавкав",
+      "Пролунав сигнал",
+      "Хтось позіхнув",
+      "Завила сирена"
+    ];
+
+    function createGrid() {
+      const grid = document.getElementById("bingoGrid");
+      grid.innerHTML = "";
+      cells = [];
+
+      for (let i = 0; i < gridSize * gridSize; i++) {
+        const cell = document.createElement("div");
+        cell.classList.add("cell");
+
+        if (i === 12) { // центр
+          cell.textContent = "FREE";
+          cell.classList.add("free", "marked");
+        } else {
+          cell.textContent = i < events.length ? (i + 1).toString() : "";
+          cell.addEventListener("click", () => cell.classList.toggle("marked"));
+        }
+
+        cells.push(cell);
+        grid.appendChild(cell);
+      }
+    }
+
+    function populateEventList() {
+      const list = document.getElementById("eventList");
+      list.innerHTML = events.map((ev, i) => `<div><strong>${i + 1}.</strong> ${ev}</div>`).join("");
+    }
+
+    function shuffleBoard() {
+      events.sort(() => Math.random() - 0.5);
+      createGrid();
+      populateEventList();
+    }
+
+    function checkBingo() {
+      alert("(Перевірка бінго ще не реалізована)");
+    }
+
+    // Перший запуск
+    createGrid();
+    populateEventList();
+  </script>
+</body>
+</html>
