@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Кастомна гра</title>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+  <div class="page-container">
+    <h1 class="page-title">Створи свою гру</h1>
+
+    <form id="custom-form" class="grid">
+      <!-- 25 input полів -->
+      <!-- Використаємо ім’я inputs[] щоб зручно обробляти -->
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+      <input type="text" class="cell-input" name="inputs[]" placeholder="..." />
+    </form>
+
+    <div class="buttons">
+      <button class="action-btn" onclick="startCustomGame()">Почати гру</button>
+    </div>
+  </div>
+
+  <script>
+    function startCustomGame() {
+      const inputs = document.querySelectorAll('.cell-input');
+      const values = Array.from(inputs).map(input => input.value.trim());
+
+      if (values.some(v => v === "")) {
+        alert("Будь ласка, заповніть всі 25 полів.");
+        return;
+      }
+
+      console.log("Починаємо гру з такими подіями:", values);
+      // Тут можна зберегти у localStorage або на сервер
+    }
+  </script>
+</body>
+</html>

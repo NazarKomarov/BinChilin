@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #c2aa96;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: sans-serif;
+  }
+  
+  .background {
+    background-color: #444;
+    padding: 40px;
+    border-radius: 12px;
+    transform: rotate(-4deg);
+  }
+  
+  .main-card {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    transform: rotate(4deg);
+    width: 320px;
+  }
+  
+  h2 {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .builder-image {
+    width: 200px;
+    height: auto;
+    margin-bottom: 30px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .game-btn {
+    flex: 1;
+    padding: 12px;
+    background-color: #e3d7ee;
+    border: none;
+    border-radius: 40px;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+
+  .page-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .cell {
+    background-color: #eee;
+    border: 2px solid #ccc;
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 6px;
+  }
+  
+  .cell.free {
+    background-color: #d9c6ff;
+    color: #333;
+  }
+  
+  .event-list {
+    text-align: left;
+    margin: 20px 0;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .action-btn {
+    padding: 12px 24px;
+    background-color: #e3d7ee;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .action-btn:hover {
+    background-color: #d3c4e0;
+  }
+  
+  .cell-input {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  .cell-input:focus {
+    outline: none;
+    border-color: #a889e6;
+    background-color: #f3edfd;
+  }
+  

@@ -41,4 +41,57 @@ body {
     padding: 0.5rem 1rem;
     font-size: 1rem;
   }
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #c2aa96;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: sans-serif;
+  }
   
+  .background {
+    background-color: #444;
+    padding: 40px;
+    border-radius: 12px;
+    transform: rotate(-4deg);
+  }
+  
+  .main-card {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    transform: rotate(4deg);
+    width: 320px;
+  }
+  
+  h2 {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .builder-image {
+    width: 200px;
+    height: auto;
+    margin-bottom: 30px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .game-btn {
+    flex: 1;
+    padding: 12px;
+    background-color: #e3d7ee;
+    border: none;
+    border-radius: 40px;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+    
